@@ -1,0 +1,114 @@
+<!DOCTYPE html> <!-- Version 5 de HTML-->
+<html lang="fr"> <!-- Précision de la langue pour le navigateur-->
+<head> <!-- Entête du document HTML -->
+	<script type="text/javascript" src="../js/script.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel= "stylesheet" href="../css/styles.css">
+	<title>Animal Kingdom - Adoptions </title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
+	<meta charset="UTF-8"> <!-- précise l'encodage des caractère à UTF-8-->
+</head><!-- Fin de la balise d'entête -->
+
+
+<body><!-- Début du code de la page web -->
+
+	<header> 
+
+		<div class="logo"> 
+			<img src="../img/paw.png" alt="Paw" width = 25% height=100%>
+		</div>
+		<h1> Pet Shop </h1>
+		<nav class="menu"> 
+			<p>
+				<li>
+					<a href=./home.html> Home </a>
+				</li>
+				<li>
+					<a href=./informations.html> Informations </a>
+				</li>
+				<li>
+					<a href=./adoptions.html> Adoptions</a>
+				</li>
+				<li>
+					<a href=./about.html> About </a>
+				</li>
+			</p>
+		</nav>
+	
+	</header>
+<main>
+<h1> Créez votre mot de passe robuste en 1 clic! </h1>
+<form method="post" name="ajoutPWD" action="#" class="box" id="addPWD" onsubmit="return false">
+	<fieldset>
+		<legend>Generation criteria</legend>
+
+			<input type="checkbox" id="lowercase" name="criteria" value="Min">
+			<label for="lowercase">Lowercase</label>
+
+			<input type="checkbox" id="uppercase" name="criteria" value="S">
+			<label for="uppercase">Uppercase</label>
+
+			<input type="checkbox" id="number" name="criteria" value="M">
+			<label for="number">Number</label>
+			
+			<input type="checkbox" id="symbol" name="criteria" value="M">
+			<label for="symbol">Symbol</label>
+	</fieldset>
+	<fieldset>
+		<legend>Password information</legend>
+			<br>
+			<label>Number of characters</label>
+			<input type="number" min=8 max=100 value=8 id="numberchar">
+			<label>Date de validité</label>
+			<input type="date" id="validitydate">
+			<br>
+			<br>
+			<label>Catégorie</label>
+			<select id="category">
+				<option value="">--Please choose an option--</option>
+				<option value="option1">Option1</option>
+				<option value="option2">Option2</option>	
+				<option value="option3">Option3</option>
+			</select>
+			<br>
+			<br>
+			<label>Site ou application</label>
+			<input type="url" id="site">
+	</fieldset>
+	<fieldset>
+		<legend>Generate and add to your list</legend>
+
+			<input type="submit" value="Add" id="add" onclick="generate()"> </button>
+			<input type="reset" value="Cancel" id="cancel"> </button>
+	</fieldset>
+</form>
+<section class="box">
+	<table id="mytab">
+		<tr>
+			<th>
+				Nombre de caractères
+			</th>
+			<th>
+				Date de création
+			</th>
+			<th>
+				Catégorie d'utilisation
+			</th>
+			<th>
+				Site ou application
+			</th>
+			<th>
+				Mot de passe généré
+			</th>
+		</tr>
+	</table>
+</section>
+</main>
+<footer>
+	<p>
+	   <a href=./about.html style="color:#F2F4F4;"> About </a>
+   </p>
+   
+   </footer>
+
+</body><!-- Fin du code de la page web -->
+</html><!-- Fin du document -->
