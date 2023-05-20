@@ -36,68 +36,72 @@
 	
 	</header>
 <main>
-<h1> Créez votre mot de passe robuste en 1 clic! </h1>
+<h1> Adopt the best buddy of your dream in 1 clic! </h1>
 <form method="post" name="ajoutPWD" action="#" class="box" id="addPWD" onsubmit="return false">
 	<fieldset>
-		<legend>Generation criteria</legend>
+		<legend>Species :</legend>
 
-			<input type="checkbox" id="lowercase" name="criteria" value="Min">
-			<label for="lowercase">Lowercase</label>
+			<input type="checkbox" id="Cat" name="criteria" value="Min">
+			<label for="Cat">Cat</label>
 
-			<input type="checkbox" id="uppercase" name="criteria" value="S">
-			<label for="uppercase">Uppercase</label>
+			<input type="checkbox" id="Dog" name="criteria" value="S">
+			<label for="Dog">Dog</label>
 
-			<input type="checkbox" id="number" name="criteria" value="M">
-			<label for="number">Number</label>
+			<input type="checkbox" id="Bird" name="criteria" value="M">
+			<label for="Bird">Bird</label>
 			
-			<input type="checkbox" id="symbol" name="criteria" value="M">
-			<label for="symbol">Symbol</label>
+			<input type="checkbox" id="Fish" name="criteria" value="M">
+			<label for="Fish">Fish</label>
 	</fieldset>
 	<fieldset>
-		<legend>Password information</legend>
+		<legend>Informations</legend>
 			<br>
-			<label>Number of characters</label>
+			<label>Maximum age</label>
 			<input type="number" min=8 max=100 value=8 id="numberchar">
-			<label>Date de validité</label>
+			<label>When are you available?</label>
 			<input type="date" id="validitydate">
 			<br>
 			<br>
-			<label>Catégorie</label>
+			<label>Race</label>
 			<select id="category">
 				<option value="">--Please choose an option--</option>
-				<option value="option1">Option1</option>
-				<option value="option2">Option2</option>	
-				<option value="option3">Option3</option>
+				<option value="option1">Pure blood</option>
+				<option value="option2">Mixed</option>	
+				<option value="option3">Unknown</option>
 			</select>
 			<br>
 			<br>
-			<label>Site ou application</label>
+			<label>Examples</label>
 			<input type="url" id="site">
 	</fieldset>
 	<fieldset>
-		<legend>Generate and add to your list</legend>
+		<legend>Generate and add to our waitlist</legend>
 
 			<input type="submit" value="Add" id="add" onclick="generate()"> </button>
 			<input type="reset" value="Cancel" id="cancel"> </button>
 	</fieldset>
 </form>
 <section class="box">
+	<h2> Summary of your request: </h2>
 	<table id="mytab">
 		<tr>
 			<th>
-				Nombre de caractères
+				Species
 			</th>
 			<th>
-				Date de création
+				Maximum age
 			</th>
 			<th>
-				Catégorie d'utilisation
+				Available?
 			</th>
 			<th>
-				Site ou application
+				Race
 			</th>
 			<th>
-				Mot de passe généré
+				Examples
+			</th>
+			<th>
+				Status
 			</th>
 		</tr>
 	</table>
