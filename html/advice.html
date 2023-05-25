@@ -23,7 +23,7 @@
 					<a href=./home.html> Home </a>
 				</li>
 				<li>
-					<a href=./informations.html> Informations </a>
+					<a href=./information.html> Information </a>
 				</li>
 				<li>
 					<a href=./adoptions.html> Adoptions</a>
@@ -37,8 +37,8 @@
 	</header>
 <main>
 <h1> We will find the perfect animal for you! </h1>
-<div class="box">
-<form method="post" name="Advice" action="#" id="character" onsubmit="return false">
+<div class="boxadvice">
+<form method="post" name="Advice" action="#" id="Advice" onsubmit="return false">
 	<fieldset>
 		<legend>What are you able to give to or for an animal?</legend>
 
@@ -50,12 +50,15 @@
 
 			<input type="checkbox" id="Calm" name="criteria" value="C">
 			<label for="Calm">Calm</label>
-			
+			<br>
 			<input type="checkbox" id="Space" name="criteria" value="S">
 			<label for="Space">Space</label>
 
 			<input type="checkbox" id="Money" name="criteria" value="M">
 			<label for="Money">Money</label>
+
+			<input type="checkbox" id="Hugs" name="criteria" value="M">
+			<label for="Hugs">Hugs</label>
 	</fieldset>
 	<fieldset>
 		<legend>Informations</legend>
@@ -67,8 +70,8 @@
 			<label>Do you want an animal with a high life expectancy? (>10 years)</label>
 			<select id="life">
 				<option value="">--Please choose an option--</option>
-				<option value="Baby">Yes</option>
-				<option value="Young_adult">No</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
 			</select>
 			<br>
 			<br>
@@ -82,12 +85,14 @@
 	</fieldset>
 	<fieldset>
 		<legend>We'll see what you may have...</legend>
-			<input type="submit" value="Try!" id="add" onclick="Advice()"> </button>
+			<input type="submit" value="Try!" id="try"> </button>
 	</fieldset>
 </form>
 <section>
 	<h2> Result: </h2>
-	<!-- Généré en java -->
+	<div id="MyResult">
+
+	</div>
 </section>
 </div>
 </main>
