@@ -1,22 +1,27 @@
 console.log("Je suis la console !");
 
-/*
-function bienvenue(){
-    alert("Ceci est une fenêtre pop-up!");
-    setTimeout(bienvenue, 1000);
-    bienvenue();
-    setInterval(bienvenue, 5000);
-}*/
 
-var minuscule = "abcdefghijklmnopqrstuvwxyz";
-var majuscule = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var chiffre = "0123456789";
-var carspecial = "%!&*^()#$:";
+/*The Advice page*/
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('#Advice').addEventListener('submit',function(e){
+        var myForm = document.forms.Advice;
+        if (myForm.elements["lowercase"].checked || myForm.elements["uppercase"].checked || myForm.elements["number"].checked || myForm.elements["symbol"].checked){
+            generateAdvice(); 
+        }
+        else{
+            alert("Choisissez au moins un critère!"); 
+        }
+        document.Advice.reset();
+    });
+});    
 
-function generate(){
-    var myForm = document.forms.ajoutPWD;
-    var listecar ="";
-    //console.log(myForm);
+function generateAdvice(){
+    var myForm = document.forms.Advice;
+}
+
+/* The adoption page*/
+function generateAdopt(){
+    var myForm = document.forms.ajoutAdopt;
     
     var newLine = document.createElement("tr");
     var col1 = document.createElement("td");
@@ -24,69 +29,61 @@ function generate(){
     var col3 = document.createElement("td");
     var col4 = document.createElement("td");
     var col5 = document.createElement("td");
-    
-    if (myForm.elements["lowercase"].checked){
-        listecar+=minuscule;
+    var col6 = document.createElement("td");
+
+    col1.textContent = "";
+    if (myForm.elements["Dog"].checked) {
+        col1.textContent += "Dog";
     }
-    if (myForm.elements["uppercase"].checked){
-        listecar+=majuscule;
+    if (myForm.elements["Cat"].checked) {
+        if(col1.textContent != ""){
+            col1.textContent += " and ";
+        }
+        col1.textContent += "Cat";
     }
-    if (myForm.elements["number"].checked){
-        listecar+=chiffre;
+    if (myForm.elements["Fish"].checked) {
+        if(col1.textContent != ""){
+            col1.textContent += " and ";
+        }
+        col1.textContent += "Fish";
     }
-    if (myForm.elements["symbol"].checked){
-        listecar+=carspecial;
+    if (myForm.elements["Bird"].checked) {
+        if(col1.textContent != ""){
+            col1.textContent += " and ";
+        }
+        col1.textContent += "Bird";
+    }
+    if (myForm.elements["Rodent"].checked) {
+        if(col1.textContent != ""){
+            col1.textContent += " and ";
+        }
+        col1.textContent += "Rodent";
+    }
+    if (myForm.elements["Horse"].checked) {
+        if(col1.textContent != ""){
+            col1.textContent += " and ";
+        }
+        col1.textContent += "Horse";
     }
 
-    var goodpassword = true;
+    col2.textContent = myForm.elements["numberanimals"].value;
+    col3.textContent = myForm.elements["disponibility"].value;
+    col4.textContent = myForm.elements["category"].value;
+    col5.textContent = myForm.elements["adress"].value;
+    col6.textContent = "Waiting list";
 
-    while (goodpassword){
-        var password ="";
-        for (var i=1;i<= myForm.elements["numberchar"].value; i++){
-            var randomNumber = Math.floor(Math.random() * listecar.length);
-            password += listecar.substring(randomNumber,randomNumber +1);
-        }
-        console.log(password);
-        var goodminuscule = false;
-        var goodmajuscule = false;
-        var goodnumber = false;
-        var goodsymbol = false;
-
-        for (var i=0; i <= minuscule.length; i++){
-            if (password.indexOf(minuscule[i]) != -1){
-                goodminuscule = true;
-            }
-        }
-        for (var i=0; i <= majuscule.length; i++){
-            if (password.indexOf(majuscule[i]) != -1){
-                goodmajuscule = true;
-            }
-        }
-        for (var i=0; i <= chiffre.length; i++){
-            if (password.indexOf(chiffre[i]) != -1){
-                goodnumber = true;
-            }
-        }
-        for (var i=0; i <= carspecial.length; i++){
-            if (password.indexOf(carspecial[i]) != -1){
-                goodsymbol = true;
-            }
-        }
-
-        if(goodminuscule && goodmajuscule && goodnumber && goodsymbol){
-            goodpassword = false;
-        }
-    }
-    //console.log(password);
-
-    col1.textContent = myForm.elements["numberchar"].value;
-    col2.textContent = myForm.elements["validitydate"].value;
-    col3.textContent = myForm.elements["category"].value;
-    col4.textContent = myForm.elements["site"].value;
-    col5.textContent = password;
-
-    newLine.append(col1,col2,col3,col4,col5);
-
+    newLine.append(col1,col2,col3,col4,col5,col6);
+    console.log(newLine);
     var myTable = document.getElementById("mytab");
     myTable.appendChild(newLine);
+}
+
+function supprimer() {
+    if (confirm("Confirmez-vous la suppression de votre demande d'adoption?")) {
+        var myTable = document.getElementById("mytab");
+        var rowCount = myTable.rows.length;
+        for (var i = rowCount - 1; i > 0; i--) {
+            myTable.removeChild(myTable.lastChild);
+        }
+    }
 }

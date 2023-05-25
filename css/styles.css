@@ -1,15 +1,10 @@
-/*Ajouter une police*/
+/*Adding a font*/
 @font-face {
-	font-family: 'Gelica';
-	src: url("fonts/Fontspring-DEMO-gelica-regular.otf") format("opentype");
+	font-family: 'Mermaid';
+	src: url("../font/Mermaid\ Babies.otf") format("opentype");
 }
 
-@font-face {
-	font-family: 'Bodoni';
-	src: url("fonts/BodoniFLF-Bold.ttf") format("truetype");
-}
-
-/* Définir les couleurs */
+/* Colors definition */
 :root {
     --couleur-principale: #2C3C3F;
     --couleur-secondaire: #a77ea4;
@@ -17,22 +12,45 @@
     --couleur-fond: #F2F4F4;
   }
 
-/* Style général de la page */
+/* General style of the site */
 body {
   background-color: var(--couleur-fond);
   font-family: Cambria, Cochin, Georgia, sans-serif;
   margin: 0;
+  padding-bottom: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Mermaid', sans-serif;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+h2 {
+text-align: left;
+color: var(--couleur-secondaire);
+font-family: 'Mermaid', sans-serif;
+margin-block-start: 0;
+margin-block-end: 0;
+}
+
+p {
+text-align: left;
+color: var(--couleur-principale);
+font-family: 'Mermaid', sans-serif;
+margin-block-start: 0;
 }
 
 
-/* En-tête */
+/* Header (and it elements) */
 header {
   background-color: var(--couleur-principale);
   color: var(--couleur-fond);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* pour aligner les éléments à l'extrémité gauche et droite */
-  align-items: center; /* pour aligner les éléments verticalement */
+  align-items:center; /* pour aligner les éléments verticalement */
   height: 80px;
   padding: 0 20px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -43,23 +61,23 @@ header {
 .logo {
   flex: 1;
   padding: 0;
-  margin-bottom: 10px;
   height: 50px;
   margin-left: 50px;
 }
 
-h1 {
-    text-align: center;
-    flex:1;
-    font-family: 'Gelica', sans-serif;
-    margin-bottom: 40px;
+.title{
+  margin-block-start: 0;
+  height: 50px;
+  flex:1;
+  font-size: 35px;
+  line-height: 50px;
 }
 
 /* Menu */
 .menu {
   justify-content: center;
   flex: 5;
-  font-family: 'Gelica', sans-serif;
+  font-family: 'Mermaid', sans-serif;
   display: flex;
   font-size: 20px;
   margin-right: 50px;
@@ -90,6 +108,28 @@ h1 {
   color: var(--couleur-tertiaire);
 }
 
+/*Link with a "button" aspect to the advice page*/
+.button {
+  text-align: center;
+  font-family: 'Mermaid', sans-serif;
+  flex:1;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: var(--couleur-tertiaire);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  width:10px;
+  margin-right: 50px;
+}
+
+.button:hover {
+  background-color: var(--couleur-secondaire);
+}
+
+/*The footer and it's link to the about page*/
 footer{
     background-color: var(--couleur-principale);
     padding: 0 20px;
@@ -97,17 +137,24 @@ footer{
     position: fixed;
     width: 100%;
     bottom: 0;
-    text-align: center;
+    height: 50px;
+}
+
+.link{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
 }
 
 
-
-/* Centre de la page */
+/* Center of the page */
 main {
-  padding: 20px; /* pour aligner les éléments verticalement */
+  padding: 20px; 
   padding-top: 100px;
+  padding-left: 50px;
 }
 
+/*The about page*/
 .about {
   background-image: url(../img/prairie.jpeg);
   background-size: cover;
@@ -127,7 +174,7 @@ main {
 }
 
 .aboutcontainer h2{
-  font-family: 'Gelica', serif;
+  font-family: 'Mermaid', serif;
   font-size: 50px;
   color:var(--couleur-principale);
 }
@@ -141,17 +188,44 @@ main {
   color:darkslategray;
 }
 
+
+/*The information page: first row and first column of the table in bright colors*/
 .c1{
     background-color: var(--couleur-secondaire);
+    font-family: "Mermaid", sans-serif;
+    color: var(--couleur-principale);
+    font-size: larger;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .c2{
     background-color: var(--couleur-tertiaire);
+    font-family: "Mermaid", sans-serif;
+    color: var(--couleur-principale);
+    font-size: larger;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-.c3{
+
+/* Information table*/
+table{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border: solid 1px var(--couleur-principale);
+  border-width: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);;
+}
+.info td{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: pink;
 }
 
-
+/* Adoption form page*/
 .box{
     margin-left: auto;
     margin-right: auto;
@@ -161,21 +235,57 @@ main {
       -moz-box-shadow: 0 0 10px  5px rgba(0,0,0,0.6);
       -webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
       -o-box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
-    background-color:var(--couleur-secondaire) ;
+    background-color: var(--couleur-principale);
     text-align: center;
     border-radius: 25px;
     padding: 20px;
-    border: solid 1px var(--couleur-tertiaire);
+    border: solid 1px var(--couleur-secondaire);
     margin-bottom: 20px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom: 100px;
+
 }
 
+/*The form at the left, the table at the right*/
+.box form{
+  flex:1;
+}
+
+.box section{
+  padding-left: 30px;
+  flex:1;
+}
+
+.box h2{
+  color:white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.box p{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 200px;
+  padding-right: 200px;
+  color:white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* buttons of the form*/
 .box #add{
-    background-color: green;
+    background-color: var(--couleur-tertiaire);
     color: white;
 }
 
 .box #cancel{
-    background-color: red;
+    background-color: var(--couleur-secondaire);
     color: white;
 }
 
@@ -189,4 +299,15 @@ main {
 
 .box table{
     font-size: small;
+}
+
+/* table of results*/
+.results th{
+  padding:10px;
+  width: 100px;
+}
+
+.result td{
+  background-color: white;
+  color:var(--couleur-principale);
 }

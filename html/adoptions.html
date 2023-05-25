@@ -16,7 +16,7 @@
 		<div class="logo"> 
 			<img src="../img/paw.png" alt="Paw" width = 25% height=100%>
 		</div>
-		<h1> Pet Shop </h1>
+		<h1 class="title"> Pet Shop </h1>
 		<nav class="menu"> 
 			<p>
 				<li>
@@ -33,11 +33,13 @@
 				</li>
 			</p>
 		</nav>
-	
+		<a class="button" href="./advice.html">Need advice to choose ?</a>
 	</header>
 <main>
 <h1> Adopt the best buddy of your dream in 1 clic! </h1>
-<form method="post" name="ajoutPWD" action="#" class="box" id="addPWD" onsubmit="return false">
+<div class="box">
+<p> (If you don't know or can't provide an information, don't worry, leave it blank and we will get back to you to help you!)</p>
+<form method="post" name="ajoutAdopt" action="#" id="species" onsubmit="return false">
 	<fieldset>
 		<legend>Species :</legend>
 
@@ -47,58 +49,67 @@
 			<input type="checkbox" id="Dog" name="criteria" value="S">
 			<label for="Dog">Dog</label>
 
-			<input type="checkbox" id="Bird" name="criteria" value="M">
+			<input type="checkbox" id="Bird" name="criteria" value="B">
 			<label for="Bird">Bird</label>
 			
-			<input type="checkbox" id="Fish" name="criteria" value="M">
+			<input type="checkbox" id="Fish" name="criteria" value="F">
 			<label for="Fish">Fish</label>
+
+			<input type="checkbox" id="Rodent" name="criteria" value="R">
+			<label for="Rodent">Rodent</label>
+
+			<input type="checkbox" id="Horse" name="criteria" value="H">
+			<label for="Horse">Horse</label>
 	</fieldset>
 	<fieldset>
 		<legend>Informations</legend>
 			<br>
-			<label>Maximum age</label>
-			<input type="number" min=8 max=100 value=8 id="numberchar">
-			<label>When are you available?</label>
-			<input type="date" id="validitydate">
+			<label>Number of animals ?</label>
+			<input type="number" min=1 max=5 value=1 id="numberanimals">
 			<br>
 			<br>
-			<label>Race</label>
+			<label>When are you available ?</label>
+			<input type="date" id="disponibility">
+			<br>
+			<br>
+			<label>Which age ?</label>
 			<select id="category">
 				<option value="">--Please choose an option--</option>
-				<option value="option1">Pure blood</option>
-				<option value="option2">Mixed</option>	
-				<option value="option3">Unknown</option>
+				<option value="Baby">Baby</option>
+				<option value="Young_adult">Young adult</option>	
+				<option value="Adult">Adult</option>
+				<option value="Senior">Senior</option>
 			</select>
 			<br>
 			<br>
-			<label>Examples</label>
-			<input type="url" id="site">
+			<label>Your adress (on google maps)</label>
+			<input type="url" id="adress">
 	</fieldset>
 	<fieldset>
 		<legend>Generate and add to our waitlist</legend>
 
-			<input type="submit" value="Add" id="add" onclick="generate()"> </button>
-			<input type="reset" value="Cancel" id="cancel"> </button>
+			<input type="submit" value="Add" id="add" onclick="generateAdopt()"> </button>
+			<input type="reset" value="Cancel" id="cancel" onclick="supprimer()"> </button>
 	</fieldset>
 </form>
-<section class="box">
+<section>
 	<h2> Summary of your request: </h2>
-	<table id="mytab">
+	<table id="mytab" class="results" bordercolor="#a77ea4">
 		<tr>
 			<th>
 				Species
 			</th>
 			<th>
-				Maximum age
+				Number of animals
 			</th>
 			<th>
-				Available?
+				Disponibility
 			</th>
 			<th>
-				Race
+				Age
 			</th>
 			<th>
-				Examples
+				Adress
 			</th>
 			<th>
 				Status
@@ -106,9 +117,10 @@
 		</tr>
 	</table>
 </section>
+</div>
 </main>
 <footer>
-	<p>
+	<p class="link">
 	   <a href=./about.html style="color:#F2F4F4;"> About </a>
    </p>
    
