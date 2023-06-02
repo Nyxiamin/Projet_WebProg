@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         document.Advice.reset();
     });
-});    
+});     
 
 function generateAdvice(){
     var myForm = document.forms.Advice;
