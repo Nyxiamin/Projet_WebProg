@@ -36,10 +36,6 @@ function generateAdvice(){
     if (!(myForm.elements["Money"].checked)){
         None +=1;
     }
-    if (None == 2){
-        Result.textContent = "None.";
-        Comment.textContent = "You should not have an animal if you don't have neither Patience nor Money..."
-    }
 
     if (!(myForm.elements["Time"].checked)){
         Dog += 1;
@@ -99,39 +95,46 @@ function generateAdvice(){
     }
 
     var ContentResult = document.createElement("div");
-
-    if (Dog > Cat && Dog > Bird && Dog > Fish && Dog > Horse && Dog > Rodent){
-        Result.textContent = "A dog!";
-        Comment.textContent  = "Allow me to introduce you to the loyal and playful dog, a beloved member of many families, ready to shower you with love and bring endless joy and companionship.";
+    console.log(None, Dog, Cat, Bird, Fish, Horse, Rodent);
+    if (None == 2){
+        Result.textContent = "None.";
+        Comment.textContent = "You should not have an animal if you don't have neither patience nor money... Maybe a stuffed animal instead?"
     }
     else{
-        if (Cat > Bird && Cat > Fish && Cat > Horse && Cat > Rodent){
-            Result.textContent  = "A cat!";
-            Comment.textContent  = "Meet the charming and independent cat, a furry companion known for its grace, agility, and affectionate nature.";
+        if (Dog > Cat && Dog > Bird && Dog > Fish && Dog > Horse && Dog > Rodent){
+            Result.textContent = "A dog!";
+            Comment.textContent  = "Allow me to introduce you to the loyal and playful dog, a beloved member of many families, ready to shower you with love and bring endless joy and companionship.";
         }
         else{
-            if (Bird > Fish && Bird > Horse && Bird > Rodent){
-                Result.textContent  = "A bird!";
-                Comment.textContent  = "Say hello to the colorful and melodious bird, a feathered friend that will bring vibrant beauty and delightful tunes to your home.";
+            if (Cat > Bird && Cat > Fish && Cat > Horse && Cat > Rodent){
+                Result.textContent  = "A cat!";
+                Comment.textContent  = "Meet the charming and independent cat, a furry companion known for its grace, agility, and affectionate nature.";
             }
             else{
-                if (Fish > Horse && Fish > Rodent){
-                    Result.textContent  = "A fish!";
-                    Comment.textContent  = "Behold the serene and graceful fish, a captivating aquatic creature that adds a touch of tranquility and mesmerizing beauty to any tank or pond.";
+                if (Bird > Fish && Bird > Horse && Bird > Rodent){
+                    Result.textContent  = "A bird!";
+                    Comment.textContent  = "Say hello to the colorful and melodious bird, a feathered friend that will bring vibrant beauty and delightful tunes to your home.";
                 }
                 else{
-                    if (Horse > Rodent){
-                        Result.textContent  = "A horse!";
-                        Comment.textContent  = "Meet the majestic and powerful horse, a magnificent companion that embodies elegance, intelligence, and the spirit of adventure, ready to forge unforgettable bonds and embark on exciting journeys.";
+                    if (Fish > Horse && Fish > Rodent){
+                        Result.textContent  = "A fish!";
+                        Comment.textContent  = "Behold the serene and graceful fish, a captivating aquatic creature that adds a touch of tranquility and mesmerizing beauty to any tank or pond.";
                     }
                     else{
-                        Result.textContent  = "A rodent!";
-                        Comment.textContent  = "Introducing you to the small and curious rodent, a delightful and inquisitive friend that will bring a dash of energy and cuteness to your daily life.";
+                        if (Horse > Rodent){
+                            Result.textContent  = "A horse!";
+                            Comment.textContent  = "Meet the majestic and powerful horse, a magnificent companion that embodies elegance, intelligence, and the spirit of adventure, ready to forge unforgettable bonds and embark on exciting journeys.";
+                        }
+                        else{
+                            Result.textContent  = "A rodent!";
+                            Comment.textContent  = "Introducing you to the small and curious rodent, a delightful and inquisitive friend that will bring a dash of energy and cuteness to your daily life.";
+                        }
                     }
                 }
             }
         }
     }
+    
 
     ContentResult.append(Result, Comment);
     var myResult = document.getElementById("MyResult");

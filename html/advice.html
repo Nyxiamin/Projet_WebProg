@@ -1,18 +1,18 @@
-<!DOCTYPE html> <!-- Version 5 de HTML-->
-<html lang="fr"> <!-- Précision de la langue pour le navigateur-->
-<head> <!-- Entête du document HTML -->
-	<script type="text/javascript" src="../js/script.js"></script>
+<!DOCTYPE html> 
+
+<html lang="fr">
+
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel= "stylesheet" href="../css/styles.css">
-	<title>Animal Kingdom - Adoptions </title> <!-- Indique au navigateur quel titre vous donnez à votre page -->
-	<meta charset="UTF-8"> <!-- précise l'encodage des caractère à UTF-8-->
-</head><!-- Fin de la balise d'entête -->
+	<title> Animal Kingdom - Advice </title> 
+	<meta charset="UTF-8"> 
+</head>
 
 
-<body><!-- Début du code de la page web -->
-
+<body>
 	<header> 
-
+		<!-- Navigation bar-->
 		<div class="logo"> 
 			<img src="../img/paw.png" alt="Paw" width = 25% height=100%>
 		</div>
@@ -36,65 +36,66 @@
 		<a class="button" href="./advice.html">Need advice to choose ?</a>
 	</header>
 <main>
-<h1> We will find the perfect animal for you! </h1>
-<div class="boxadvice">
-<form method="post" name="Advice" action="#" id="Advice" onsubmit="return false">
-	<fieldset>
-		<legend>What are you able to give to or for an animal?</legend>
+	<!-- Advice form -->
+	<h1> We will find the perfect animal for you! </h1>
+	<div class="boxadvice">
+	<form method="post" name="Advice" action="#" id="Advice" onsubmit="return false">
+		<fieldset>
+			<legend>What are you able to give to or for an animal?</legend>
 
-			<input type="checkbox" id="Patience" name="criteria" value="P">
-			<label for="Patience">Patience</label>
+				<input type="checkbox" id="Patience" name="criteria" value="P">
+				<label for="Patience">Patience</label>
 
-			<input type="checkbox" id="Time" name="criteria" value="T">
-			<label for="Time">Time</label>
+				<input type="checkbox" id="Time" name="criteria" value="T">
+				<label for="Time">Time</label>
 
-			<input type="checkbox" id="Calm" name="criteria" value="C">
-			<label for="Calm">Calm</label>
-			<br>
-			<input type="checkbox" id="Space" name="criteria" value="S">
-			<label for="Space">Space</label>
+				<input type="checkbox" id="Calm" name="criteria" value="C">
+				<label for="Calm">Calm</label>
+				<br>
+				<input type="checkbox" id="Space" name="criteria" value="S">
+				<label for="Space">Space</label>
 
-			<input type="checkbox" id="Money" name="criteria" value="M">
-			<label for="Money">Money</label>
+				<input type="checkbox" id="Money" name="criteria" value="M">
+				<label for="Money">Money</label>
 
-			<input type="checkbox" id="Hugs" name="criteria" value="M">
-			<label for="Hugs">Hugs</label>
-	</fieldset>
-	<fieldset>
-		<legend>Informations</legend> 
-			<br>
-			<label>What is the age for your youngest kid? (let 0 if none)</label>
-			<input type="number" min=0 max=18 value=0 id="minkidage">
-			<br>
-			<br>
-			<label>Do you want an animal with a high life expectancy? (>10 years)</label>
-			<select id="life">
-				<option value="">--Please choose an option--</option>
-				<option value="Yes">Yes</option>
-				<option value="No">No</option>
-			</select>
-			<br>
-			<br>
-			<label>What do you value the most?</label>
-			<select id="value">
-				<option value="">--Please choose an option--</option>
-				<option value="Loyalty">Loyalty</option>
-				<option value="Freedom">Freedom</option>	
-				<option value="Calm">Calm</option>
-			</select>
-	</fieldset>
-	<fieldset>
-		<legend>We'll see what you may have...</legend>
-			<input type="submit" value="Try!" id="try"> </button>
-	</fieldset>
-</form>
-<section>
-	<h2> Result: </h2>
-	<div id="MyResult">
+				<input type="checkbox" id="Hugs" name="criteria" value="M">
+				<label for="Hugs">Hugs</label>
+		</fieldset>
+		<fieldset>
+			<legend>Informations</legend> 
+				<br>
+				<label>What is the age for your youngest kid? (let 0 if none)</label>
+				<input type="number" min=0 max=18 value=0 id="minkidage">
+				<br>
+				<br>
+				<label>Do you want an animal with a high life expectancy? (>10 years)</label>
+				<select id="life">
+					<option value="">--Please choose an option--</option>
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<br>
+				<br>
+				<label>What do you value the most?</label>
+				<select id="value">
+					<option value="">--Please choose an option--</option>
+					<option value="Loyalty">Loyalty</option>
+					<option value="Freedom">Freedom</option>	
+					<option value="Calm">Calm</option>
+				</select>
+		</fieldset>
+		<fieldset>
+			<legend>We'll see what you may have...</legend>
+				<input type="submit" value="Try!" id="try"> </button>
+		</fieldset>
+	</form>
+	<section>
+		<h2> Result: </h2>
+		<div id="MyResult">
 
+		</div>
+	</section>
 	</div>
-</section>
-</div>
 </main>
 <footer>
 	<p class="link">
